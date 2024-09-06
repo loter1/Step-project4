@@ -21,7 +21,7 @@ const getToken = async (email, password) => {
 
 
 const fetchAllCards = async () => {
-    const token = localStorage.getItem('authToken'); // Отримуємо токен з LocalStorage
+    const token = localStorage.getItem('authToken');
 
     if (!token) {
         console.error("Токен не знайдено. Будь ласка, увійдіть.");
@@ -32,7 +32,7 @@ const fetchAllCards = async () => {
         const response = await fetch("https://ajax.test-danit.com/api/v2/cards", {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}` // Передаємо токен у заголовку
+                'Authorization': `Bearer ${token}`
             }
         });
 
